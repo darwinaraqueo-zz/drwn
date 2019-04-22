@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: newTables
+      author: darwin
+      changes:
+        - createTable:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: code
+                  type: varchar(100)
+                  constraints:
+                      nullable: false
+              - column:
+                  name: title
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: author
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_created
+                  type: datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_updated
+                  type: datetime
+                  constraints:
+                    nullable: false
+            rollback:
+              - dropTable:
+                  tableName: books

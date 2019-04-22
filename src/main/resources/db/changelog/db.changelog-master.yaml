@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: teamNameHere
+      change:
+  - include:
+      file: db/changelog/included/db.changelog-1.0.yaml
